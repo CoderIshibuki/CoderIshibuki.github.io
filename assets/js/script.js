@@ -22,8 +22,8 @@ const pages = document.querySelectorAll("[data-page]");
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
     
-    // Get the text content of clicked button (remove extra spaces)
-    const buttonText = this.textContent.trim().toLowerCase();
+    // SỬA LỖI: Lấy giá trị từ data-nav-to thay vì textContent
+    const targetPage = this.dataset.navTo;
     
     // Remove active class from all pages and links
     for (let j = 0; j < pages.length; j++) {
@@ -36,9 +36,8 @@ for (let i = 0; i < navigationLinks.length; i++) {
     
     // Find and activate the corresponding page
     for (let j = 0; j < pages.length; j++) {
-      const pageName = pages[j].dataset.page.toLowerCase();
-      
-      if (buttonText === pageName) {
+      // SỬA LỖI: So sánh data-nav-to với data-page
+      if (targetPage === pages[j].dataset.page) {
         pages[j].classList.add("active");
         window.scrollTo(0, 0);
         break;
@@ -72,7 +71,8 @@ const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
   for (let i = 0; i < filterItems.length; i++) {
-    if (selectedValue === "all") {
+    // SỬA LỖI: Giá trị là "tất cả" (tiếng Việt) chứ không phải "all"
+    if (selectedValue === "tất cả") {
       filterItems[i].classList.add("active");
     } else if (selectedValue === filterItems[i].dataset.category) {
       filterItems[i].classList.add("active");
@@ -114,38 +114,4 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
-// testimonials variables (giữ lại nếu cần sau này)
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-  testimonialsItem[i].addEventListener("click", function () {
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-    testimonialsModalFunc();
-  });
-}
-
-// add click event to modal close button
-if (modalCloseBtn) {
-  modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-}
-if (overlay) {
-  overlay.addEventListener("click", testimonialsModalFunc);
-}
+// --- CODE MODAL "TESTIMONIALS" KHÔNG SỬ DỤNG ĐÃ ĐƯỢC XOÁ ---

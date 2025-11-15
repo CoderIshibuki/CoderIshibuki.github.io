@@ -7,19 +7,10 @@
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    .project-img img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-  </style>
-</head>
+  </head>
 
 <body>
   <main>
-    <!-- Sidebar -->
     <aside class="sidebar" data-sidebar>
       <div class="sidebar-info">
         <figure class="avatar-box">
@@ -96,30 +87,27 @@
       </div>
     </aside>
 
-    <!-- Main Content -->
     <div class="main-content">
-      <!-- Navigation -->
       <nav class="navbar">
         <ul class="navbar-list">
           <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>Giới thiệu</button>
+            <button class="navbar-link active" data-nav-link data-nav-to="giới thiệu">Giới thiệu</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>CV</button>
+            <button class="navbar-link" data-nav-link data-nav-to="cv">CV</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Dự án</button>
+            <button class="navbar-link" data-nav-link data-nav-to="dự án">Dự án</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Báo cáo</button>
+            <button class="navbar-link" data-nav-link data-nav-to="báo cáo">Báo cáo</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Liên hệ</button>
+            <button class="navbar-link" data-nav-link data-nav-to="liên hệ">Liên hệ</button>
           </li>
         </ul>
       </nav>
 
-      <!-- About Page -->
       <article class="about active" data-page="giới thiệu">
         <header>
           <h2 class="h2 article-title">About me</h2>
@@ -221,7 +209,6 @@
         </section>
       </article>
 
-      <!-- Resume Page -->
       <article class="resume" data-page="cv">
         <header>
           <h2 class="h2 article-title">CV</h2>
@@ -280,7 +267,6 @@
         </section>
       </article>
 
-      <!-- Portfolio Page -->
       <article class="portfolio" data-page="dự án">
         <header>
           <h2 class="h2 article-title">Dự án</h2>
@@ -360,7 +346,6 @@
         </section>
       </article>
 
-      <!-- Blog Page -->
       <article class="blog" data-page="báo cáo">
         <header>
           <h2 class="h2 article-title">Báo cáo</h2>
@@ -389,7 +374,6 @@
         </section>
       </article>
 
-      <!-- Contact Page -->
       <article class="contact" data-page="liên hệ">
         <header>
           <h2 class="h2 article-title">Liên hệ</h2>
@@ -419,7 +403,6 @@
     </div>
   </main>
 
-  <!-- JavaScript -->
   <script src="./assets/js/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
