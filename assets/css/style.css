@@ -1,20 +1,7 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
 
-/**
- * copyright 2022 @codewithsadee
- */
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
-  /**
-   * colors
-   * CHẾ ĐỘ TỐI (DARK MODE) - MẶC ĐỊNH
-   */
+
 
   /* gradient */
   --bg-gradient-onyx: linear-gradient(
@@ -97,7 +84,6 @@
   --transition-2: 0.5s ease-in-out;
 }
 
-/* TÍNH NĂNG MỚI: CHẾ ĐỘ SÁNG (LIGHT MODE) */
 html[data-theme="light"] {
   /* gradient */
   --bg-gradient-onyx: linear-gradient(
@@ -127,7 +113,7 @@ html[data-theme="light"] {
     hsl(0, 0%, 80%) 0%,
     hsla(0, 0%, 80%, 0) 50%
   );
-  /* text-gradient-yellow giữ nguyên */
+
 
   /* solid */
   --jet: hsl(0, 0%, 90%); /* border color */
@@ -152,11 +138,9 @@ html[data-theme="light"] {
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.05);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.1);
 }
-/* KẾT THÚC LIGHT MODE */
 
-/*-----------------------------------*\
-  #RESET
-\*-----------------------------------*/
+
+
 
 *,
 *::before,
@@ -214,7 +198,7 @@ html {
 
 body {
   background: var(--smoky-black);
-  transition: background 0.25s ease; /* Thêm transition cho mượt */
+  transition: background 0.25s ease; 
 }
 
 /*-----------------------------------*\
@@ -586,11 +570,7 @@ main {
 .toggle-btn.active .toggle-icon {
   transform: translateX(20px);
 }
-/* KẾT THÚC CSS BỘ ĐIỀU KHIỂN */
 
-/*-----------------------------------*\
-  #NAVBAR
-\*-----------------------------------*/
 
 .navbar {
   position: fixed;

@@ -112,9 +112,7 @@ for (let i = 0; i < formInputs.length; i++) {
 }
 
 
-// ===================================================================
-// TÍNH NĂNG MỚI: CHẾ ĐỘ SÁNG/TỐI (DARK/LIGHT MODE)
-// ===================================================================
+
 
 const themeToggleBtn = document.getElementById("theme-toggle");
 
@@ -167,9 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
 themeToggleBtn.addEventListener("click", toggleTheme);
 
 
-// ===================================================================
-// TÍNH NĂNG MỚI: ĐA NGÔN NGỮ (VI/EN)
-// ===================================================================
+
 
 const langToggleBtn = document.getElementById("lang-toggle");
 const allTranslatableElements = document.querySelectorAll("[data-lang-key]");
