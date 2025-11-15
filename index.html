@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
+<html lang="vi" data-theme="dark"> <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Phat Tran Vu Hoa</title>
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  </head>
+</head>
 
 <body>
   <main>
@@ -17,11 +16,11 @@
           <img src="./assets/images/my-avatar.png" alt="Phat Tran Vu Hoa" width="80">
         </figure>
         <div class="info-content">
-          <h1 class="name">Phat Tran Vu Hoa</h1>
-          <p class="title">Sinh viên năm nhất</p>
+          <h1 class="name" data-lang-key="name">Phat Tran Vu Hoa</h1>
+          <p class="title" data-lang-key="jobTitle">Sinh viên năm nhất</p>
         </div>
         <button class="info_more-btn" data-sidebar-btn>
-          <span>Hiện thông tin liên hệ</span>
+          <span data-lang-key="showContacts">Hiện thông tin liên hệ</span>
           <ion-icon name="chevron-down"></ion-icon>
         </button>
       </div>
@@ -34,7 +33,7 @@
               <ion-icon name="mail-outline"></ion-icon>
             </div>
             <div class="contact-info">
-              <p class="contact-title">Email</p>
+              <p class="contact-title" data-lang-key="contactEmail">Email</p>
               <a href="mailto:tranvuhoaphat@gmail.com" class="contact-link">tranvuhoaphat@gmail.com</a>
             </div>
           </li>
@@ -43,7 +42,7 @@
               <ion-icon name="phone-portrait-outline"></ion-icon>
             </div>
             <div class="contact-info">
-              <p class="contact-title">Điện thoại</p>
+              <p class="contact-title" data-lang-key="contactPhone">Điện thoại</p>
               <a href="tel:+84338295267" class="contact-link">+84 338 295 267</a>
             </div>
           </li>
@@ -52,8 +51,8 @@
               <ion-icon name="calendar-outline"></ion-icon>
             </div>
             <div class="contact-info">
-              <p class="contact-title">Ngày sinh</p>
-              <time datetime="2007-09-27">27 tháng 9, 2007</time>
+              <p class="contact-title" data-lang-key="contactBirthday">Ngày sinh</p>
+              <time datetime="2007-09-27" data-lang-key="birthdayValue">27 tháng 9, 2007</time>
             </div>
           </li>
           <li class="contact-item">
@@ -61,8 +60,8 @@
               <ion-icon name="location-outline"></ion-icon>
             </div>
             <div class="contact-info">
-              <p class="contact-title">Địa chỉ</p>
-              <address>Ngã Năm, Cần Thơ, Việt Nam</address>
+              <p class="contact-title" data-lang-key="contactLocation">Địa chỉ</p>
+              <address data-lang-key="locationValue">Ngã Năm, Cần Thơ, Việt Nam</address>
             </div>
           </li>
         </ul>
@@ -84,50 +83,74 @@
             </a>
           </li>
         </ul>
-      </div>
+
+        <div class="separator"></div>
+        <div class="settings-list">
+          <div class="settings-item">
+            <p class="settings-title" data-lang-key="theme">Chế độ</p>
+            <div class="settings-toggle-box">
+              <span class="settings-label" data-lang-key="light">Tối</span>
+              <button class="toggle-btn" id="theme-toggle" aria-label="toggle theme">
+                <div class="toggle-icon"></div>
+              </button>
+              <span class="settings-label" data-lang-key="dark">Sáng</span>
+            </div>
+          </div>
+          <div class="settings-item">
+            <p class="settings-title" data-lang-key="language">Ngôn ngữ</p>
+            <div class="settings-toggle-box">
+              <span class="settings-label">VI</span>
+              <button class="toggle-btn" id="lang-toggle" aria-label="toggle language">
+                <div class="toggle-icon"></div>
+              </button>
+              <span class="settings-label">EN</span>
+            </div>
+          </div>
+        </div>
+        </div>
     </aside>
 
     <div class="main-content">
       <nav class="navbar">
         <ul class="navbar-list">
           <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link data-nav-to="giới thiệu">Giới thiệu</button>
+            <button class="navbar-link active" data-nav-link data-nav-to="giới thiệu" data-lang-key="navAbout">Giới thiệu</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link data-nav-to="cv">CV</button>
+            <button class="navbar-link" data-nav-link data-nav-to="cv" data-lang-key="navResume">CV</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link data-nav-to="dự án">Dự án</button>
+            <button class="navbar-link" data-nav-link data-nav-to="dự án" data-lang-key="navPortfolio">Dự án</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link data-nav-to="báo cáo">Báo cáo</button>
+            <button class="navbar-link" data-nav-link data-nav-to="báo cáo" data-lang-key="navBlog">Báo cáo</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link data-nav-to="liên hệ">Liên hệ</button>
+            <button class="navbar-link" data-nav-link data-nav-to="liên hệ" data-lang-key="navContact">Liên hệ</button>
           </li>
         </ul>
       </nav>
 
       <article class="about active" data-page="giới thiệu">
         <header>
-          <h2 class="h2 article-title">About me</h2>
+          <h2 class="h2 article-title" data-lang-key="aboutTitle">About me</h2>
         </header>
         
         <section class="about-text">
-          <p>Tôi là sinh viên năm nhất tại Trường Đại học Sư phạm Thành phố Hồ Chí Minh (HCMUE)</p>
-          <p>Tôi có niềm đam mê mạnh mẽ với an ninh mạng, với sự quan tâm sâu sắc đến kiểm thử xâm nhập, săn lỗi bảo mật, và mạng & hệ thống.</p>
+          <p data-lang-key="aboutDesc1">Tôi là sinh viên năm nhất tại Trường Đại học Sư phạm Thành phố Hồ Chí Minh (HCMUE)</p>
+          <p data-lang-key="aboutDesc2">Tôi có niềm đam mê mạnh mẽ với an ninh mạng, với sự quan tâm sâu sắc đến kiểm thử xâm nhập, săn lỗi bảo mật, và mạng & hệ thống.</p>
         </section>
 
         <section class="service">
-          <h3 class="h3 service-title">Những gì tôi đang làm</h3>
+          <h3 class="h3 service-title" data-lang-key="whatIDo">Những gì tôi đang làm</h3>
           <ul class="service-list">
             <li class="service-item">
               <div class="service-icon-box">
                 <img src="./assets/images/icon-study.png" alt="Study icon" width="40">
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Sinh viên</h4>
-                <p class="service-item-text">Học Công nghệ Thông tin tại HCMUE</p>
+                <h4 class="h4 service-item-title" data-lang-key="whatIDoTitle1">Sinh viên</h4>
+                <p class="service-item-text" data-lang-key="whatIDoDesc1">Học Công nghệ Thông tin tại HCMUE</p>
               </div>
             </li>
             <li class="service-item">
@@ -135,19 +158,19 @@
                 <img src="./assets/images/icon-clb.png" alt="club icon" width="40">
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Thành viên CLB</h4>
-                <p class="service-item-text">Câu lạc bộ Tin học Khoa Công nghệ Thông tin</p>
+                <h4 class="h4 service-item-title" data-lang-key="whatIDoTitle2">Thành viên CLB</h4>
+                <p class="service-item-text" data-lang-key="whatIDoDesc2">Câu lạc bộ Tin học Khoa Công nghệ Thông tin</p>
               </div>
             </li>
           </ul>
         </section>
 
         <section class="skill">
-          <h3 class="h3 skills-title">Kỹ năng cứng</h3>
+          <h3 class="h3 skills-title" data-lang-key="hardSkills">Kỹ năng cứng</h3>
           <ul class="skills-list content-card">
             <li class="skills-item">
               <div class="title-wrapper">
-                <h5 class="h5">Thiết kế web</h5>
+                <h5 class="h5" data-lang-key="skillWeb">Thiết kế web</h5>
                 <data value="50">50%</data>
               </div>
               <div class="skill-progress-bg">
@@ -156,7 +179,7 @@
             </li>
             <li class="skills-item">
               <div class="title-wrapper">
-                <h5 class="h5">Lập trình Python</h5>
+                <h5 class="h5" data-lang-key="skillPython">Lập trình Python</h5>
                 <data value="20">20%</data>
               </div>
               <div class="skill-progress-bg">
@@ -165,7 +188,7 @@
             </li>
             <li class="skills-item">
               <div class="title-wrapper">
-                <h5 class="h5">Lập trình C++</h5>
+                <h5 class="h5" data-lang-key="skillCpp">Lập trình C++</h5>
                 <data value="50">50%</data>
               </div>
               <div class="skill-progress-bg">
@@ -176,11 +199,11 @@
         </section>
 
         <section class="skill">
-          <h3 class="h3 skills-title">Kỹ năng mềm</h3>
+          <h3 class="h3 skills-title" data-lang-key="softSkills">Kỹ năng mềm</h3>
           <ul class="skills-list content-card">
             <li class="skills-item">
               <div class="title-wrapper">
-                <h5 class="h5">Giao tiếp</h5>
+                <h5 class="h5" data-lang-key="skillComm">Giao tiếp</h5>
                 <data value="70">70%</data>
               </div>
               <div class="skill-progress-bg">
@@ -189,7 +212,7 @@
             </li>
             <li class="skills-item">
               <div class="title-wrapper">
-                <h5 class="h5">Giải quyết vấn đề</h5>
+                <h5 class="h5" data-lang-key="skillProblem">Giải quyết vấn đề</h5>
                 <data value="60">60%</data>
               </div>
               <div class="skill-progress-bg">
@@ -198,7 +221,7 @@
             </li>
             <li class="skills-item">
               <div class="title-wrapper">
-                <h5 class="h5">Quản lý thời gian</h5>
+                <h5 class="h5" data-lang-key="skillTime">Quản lý thời gian</h5>
                 <data value="40">40%</data>
               </div>
               <div class="skill-progress-bg">
@@ -211,7 +234,7 @@
 
       <article class="resume" data-page="cv">
         <header>
-          <h2 class="h2 article-title">CV</h2>
+          <h2 class="h2 article-title" data-lang-key="navResume">CV</h2>
         </header>
 
         <section class="timeline">
@@ -219,28 +242,28 @@
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-            <h3 class="h3">Học vấn</h3>
+            <h3 class="h3" data-lang-key="education">Học vấn</h3>
           </div>
           <ol class="timeline-list">
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Đại học Sư phạm TP.HCM</h4>
-              <span>2025 — Hiện tại</span>
-              <p class="timeline-text">Đang học</p>
+              <h4 class="h4 timeline-item-title" data-lang-key="edu1Title">Đại học Sư phạm TP.HCM</h4>
+              <span data-lang-key="edu1Time">2025 — Hiện tại</span>
+              <p class="timeline-text" data-lang-key="edu1Desc">Đang học</p>
             </li>
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">THPT Mai Thanh Thế</h4>
+              <h4 class="h4 timeline-item-title" data-lang-key="edu2Title">THPT Mai Thanh Thế</h4>
               <span>2022 — 2025</span>
-              <p class="timeline-text">Tốt nghiệp loại Xuất sắc</p>
+              <p class="timeline-text" data-lang-key="edu2Desc">Tốt nghiệp loại Xuất sắc</p>
             </li>
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">THCS Phường 1</h4>
+              <h4 class="h4 timeline-item-title" data-lang-key="edu3Title">THCS Phường 1</h4>
               <span>2018 — 2022</span>
-              <p class="timeline-text">4 năm Học sinh Xuất Sắc</p>
+              <p class="timeline-text" data-lang-key="edu3Desc">4 năm Học sinh Xuất Sắc</p>
             </li>
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Tiểu học Ngã Năm</h4>
+              <h4 class="h4 timeline-item-title" data-lang-key="edu4Title">Tiểu học Ngã Năm</h4>
               <span>2013 — 2018</span>
-              <p class="timeline-text">5 năm xếp loại Giỏi</p>
+              <p class="timeline-text" data-lang-key="edu4Desc">5 năm xếp loại Giỏi</p>
             </li>
           </ol>
         </section>
@@ -250,18 +273,18 @@
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-            <h3 class="h3">Kinh nghiệm</h3>
+            <h3 class="h3" data-lang-key="experience">Kinh nghiệm</h3>
           </div>
           <ol class="timeline-list">
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Các cuộc thi</h4>
+              <h4 class="h4 timeline-item-title" data-lang-key="exp1Title">Các cuộc thi</h4>
               <span>2021 — 2024</span>
-              <p class="timeline-text">Thành viên đội tuyển HSG Tin học</p>
+              <p class="timeline-text" data-lang-key="exp1Desc">Thành viên đội tuyển HSG Tin học</p>
             </li>
             <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Tự học An ninh mạng</h4>
-              <span>2024 — Hiện tại</span>
-              <p class="timeline-text">Tự học kiểm thử xâm nhập và lập trình</p>
+              <h4 class="h4 timeline-item-title" data-lang-key="exp2Title">Tự học An ninh mạng</h4>
+              <span data-lang-key="exp2Time">2024 — Hiện tại</span>
+              <p class="timeline-text" data-lang-key="exp2Desc">Tự học kiểm thử xâm nhập và lập trình</p>
             </li>
           </ol>
         </section>
@@ -269,38 +292,38 @@
 
       <article class="portfolio" data-page="dự án">
         <header>
-          <h2 class="h2 article-title">Dự án</h2>
+          <h2 class="h2 article-title" data-lang-key="navPortfolio">Dự án</h2>
         </header>
 
         <section class="projects">
           <ul class="filter-list">
             <li class="filter-item">
-              <button class="active" data-filter-btn>Tất cả</button>
+              <button class="active" data-filter-btn data-filter-value="tất cả" data-lang-key="filterAll">Tất cả</button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Hệ thống & Mạng</button>
+              <button data-filter-btn data-filter-value="hệ thống & mạng" data-lang-key="filterSystem">Hệ thống & Mạng</button>
             </li>
             <li class="filter-item">
-              <button data-filter-btn>Thiết kế & Phát triển web</button>
+              <button data-filter-btn data-filter-value="thiết kế & phát triển web" data-lang-key="filterWeb">Thiết kế & Phát triển web</button>
             </li>
           </ul>
 
           <div class="filter-select-box">
             <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value>Chọn danh mục</div>
+              <div class="select-value" data-selecct-value data-lang-key="selectCategory">Chọn danh mục</div>
               <div class="select-icon">
                 <ion-icon name="chevron-down"></ion-icon>
               </div>
             </button>
             <ul class="select-list">
               <li class="select-item">
-                <button data-select-item>Tất cả</button>
+                <button data-select-item data-filter-value="tất cả" data-lang-key="filterAll">Tất cả</button>
               </li>
               <li class="select-item">
-                <button data-select-item>Hệ Thống & Mạng</button>
+                <button data-select-item data-filter-value="hệ thống & mạng" data-lang-key="filterSystemMobile">Hệ Thống & Mạng</button>
               </li>
               <li class="select-item">
-                <button data-select-item>Thiết kế & Phát triển web</button>
+                <button data-select-item data-filter-value="thiết kế & phát triển web" data-lang-key="filterWebMobile">Thiết kế & Phát triển web</button>
               </li>
             </ul>
           </div>
@@ -314,8 +337,8 @@
                   </div>
                   <img src="./assets/images/project-1.png" alt="Reset FCM Korea" loading="lazy">
                 </figure>
-                <h3 class="project-title">Reset FCM Korea</h3>
-                <p class="project-category">Thiết kế & Phát triển web</p>
+                <h3 class="project-title" data-lang-key="project1Title">Reset FCM Korea</h3>
+                <p class="project-category" data-lang-key="project1Cat">Thiết kế & Phát triển web</p>
               </a>
             </li>
             <li class="project-item active" data-filter-item data-category="thiết kế & phát triển web">
@@ -326,8 +349,8 @@
                   </div>
                   <img src="./assets/images/project-2.png" alt="Portfolio Cá nhân" loading="lazy">
                 </figure>
-                <h3 class="project-title">Portfolio Cá nhân</h3>
-                <p class="project-category">Thiết kế & Phát triển web</p>
+                <h3 class="project-title" data-lang-key="project2Title">Portfolio Cá nhân</h3>
+                <p class="project-category" data-lang-key="project2Cat">Thiết kế & Phát triển web</p>
               </a>
             </li>
             <li class="project-item active" data-filter-item data-category="hệ thống & mạng">
@@ -338,8 +361,8 @@
                   </div>
                   <img src="./assets/images/project-3.png" alt="Auto IP Changer" loading="lazy">
                 </figure>
-                <h3 class="project-title">Auto IP Changer</h3>
-                <p class="project-category">Hệ thống & Mạng</p>
+                <h3 class="project-title" data-lang-key="project3Title">Auto IP Changer</h3>
+                <p class="project-category" data-lang-key="project3Cat">Hệ thống & Mạng</p>
               </a>
             </li>
           </ul>
@@ -348,7 +371,7 @@
 
       <article class="blog" data-page="báo cáo">
         <header>
-          <h2 class="h2 article-title">Báo cáo</h2>
+          <h2 class="h2 article-title" data-lang-key="navBlog">Báo cáo</h2>
         </header>
 
         <section class="blog-posts">
@@ -362,21 +385,20 @@
                   <div class="blog-meta">
                     <p class="blog-category">HTML</p>
                     <span class="dot"></span>
-                    <time datetime="2025-10-15">15 tháng 10, 2025</time>
+                    <time datetime="2025-10-15" data-lang-key="blog1Date">15 tháng 10, 2025</time>
                   </div>
-                  <h3 class="h3 blog-item-title">Document Object Model</h3>
-                  <p class="blog-text">Bài báo cáo API</p>
+                  <h3 class="h3 blog-item-title" data-lang-key="blog1Title">Document Object Model</h3>
+                  <p class="blog-text" data-lang-key="blog1Desc">Bài báo cáo API</p>
                 </div>
               </a>
             </li>
-  
           </ul>
         </section>
       </article>
 
       <article class="contact" data-page="liên hệ">
         <header>
-          <h2 class="h2 article-title">Liên hệ</h2>
+          <h2 class="h2 article-title" data-lang-key="navContact">Liên hệ</h2>
         </header>
 
         <section class="mapbox" data-mapbox>
@@ -386,16 +408,16 @@
         </section>
 
         <section class="contact-form">
-          <h3 class="h3 form-title">Form liên hệ</h3>
+          <h3 class="h3 form-title" data-lang-key="contactFormTitle">Form liên hệ</h3>
           <form action="#" class="form" data-form>
             <div class="input-wrapper">
-              <input type="text" name="name" class="form-input" placeholder="Họ và tên" required data-form-input>
-              <input type="email" name="email" class="form-input" placeholder="Địa chỉ email" required data-form-input>
+              <input type="text" name="name" class="form-input" placeholder="Họ và tên" required data-form-input data-lang-key="formName">
+              <input type="email" name="email" class="form-input" placeholder="Địa chỉ email" required data-form-input data-lang-key="formEmail">
             </div>
-            <textarea name="message" class="form-input" placeholder="Tin nhắn của bạn" required data-form-input></textarea>
+            <textarea name="message" class="form-input" placeholder="Tin nhắn của bạn" required data-form-input data-lang-key="formMessage"></textarea>
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
-              <span>Gửi tin nhắn</span>
+              <span data-lang-key="formSend">Gửi tin nhắn</span>
             </button>
           </form>
         </section>
