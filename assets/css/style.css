@@ -1,5 +1,3 @@
-
-
 :root {
 
 
@@ -389,6 +387,16 @@ main {
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
+  /* Bắt đầu chỉnh sửa cho việc cắt ảnh và bo góc */
+  overflow: hidden; 
+}
+
+/* Chỉnh sửa ảnh đại diện */
+.avatar-box img {
+  width: 70px; /* Kích thước cố định */
+  height: 70px; /* Kích thước cố định */
+  object-fit: cover; /* Quan trọng: Cắt ảnh để lấp đầy khung mà không làm méo */
+  border-radius: 20px; /* Bo tròn trực tiếp ảnh, khớp với khung */
 }
 
 .info-content .name {
@@ -700,21 +708,6 @@ html[data-theme="light"] .navbar {
   line-height: 1.6;
   transition: color 0.25s ease; /* Thêm transition */
 }
-
-/**
- * #testimonials 
- */
-/* ... (Code testimonials giữ nguyên, không cần sửa) ... */
-
-/**
- * #testimonials-modal
- */
-/* ... (Code modal giữ nguyên, không cần sửa) ... */
-
-/**
- * #clients 
- */
-/* ... (Code clients giữ nguyên, không cần sửa) ... */
 
 /*-----------------------------------*\
   #RESUME
@@ -1365,9 +1358,13 @@ textarea.form-input::-webkit-resizer {
   .avatar-box {
     border-radius: 30px;
   }
-
+  
+  /* Chỉnh sửa ảnh đại diện cho màn hình 580px */
   .avatar-box img {
     width: 120px;
+    height: 120px; /* Thêm chiều cao cố định để cắt ảnh */
+    object-fit: cover; /* Quan trọng: Cắt ảnh để lấp đầy khung mà không làm méo */
+    border-radius: 30px; /* Bo tròn trực tiếp ảnh, khớp với khung */
   }
 
   .info-content .name {
@@ -1464,15 +1461,6 @@ textarea.form-input::-webkit-resizer {
   .service-content-box {
     text-align: left;
   }
-
-  /* testimonials */
-  /* ... (Code testimonials giữ nguyên) ... */
-
-  /* testimonials modal */
-  /* ... (Code modal giữ nguyên) ... */
-
-  /* clients */
-  /* ... (Code clients giữ nguyên) ... */
 
   /**
    * #RESUME
@@ -1583,9 +1571,6 @@ textarea.form-input::-webkit-resizer {
   /**
    * ABOUT
    */
-
-  /* testimonials modal */
-  /* ... (Code modal giữ nguyên) ... */
 
   /**
    * PORTFOLIO
@@ -1728,12 +1713,6 @@ textarea.form-input::-webkit-resizer {
     gap: 20px 25px;
   }
 
-  /* testimonials */
-  /* ... (Code testimonials giữ nguyên) ... */
-
-  /* clients */
-  /* ... (Code clients giữ nguyên) ... */
-
   /**
    * PORTFOLIO
    */
@@ -1846,6 +1825,9 @@ textarea.form-input::-webkit-resizer {
 
   .avatar-box img {
     width: 150px;
+    height: 150px; /* Thêm chiều cao cố định để cắt ảnh */
+    object-fit: cover; /* Quan trọng: Cắt ảnh để lấp đầy khung mà không làm méo */
+    border-radius: 30px; /* Bo tròn trực tiếp ảnh */
   }
 
   .info-content .name {
