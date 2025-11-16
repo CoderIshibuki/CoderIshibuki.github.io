@@ -271,8 +271,8 @@ const translations = {
     // Navbar
     navAbout: "About",
     navResume: "Resume",
-    navPortfolio: "Portfolio",
-    navBlog: "Blog",
+    navPortfolio: "Project",
+    navBlog: "Blog & Report",
     navContact: "Contact",
     // Giới thiệu
     aboutTitle: "About me",
