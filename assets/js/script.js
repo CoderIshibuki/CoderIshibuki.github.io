@@ -293,7 +293,7 @@ const translations = {
     skillTime: "Time Management",
     // CV
     education: "Education",
-    edu1Title: "HCMUE",
+    edu1Title: "Ho Chi Minh City University of Education (HCMUE)",
     edu1Time: "2025 — Present",
     edu1Desc: "Studying",
     edu2Title: "Mai Thanh The High School",
