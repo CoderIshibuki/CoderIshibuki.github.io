@@ -6,6 +6,43 @@
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+  /* CSS ÉP BUỘC CHO SKILL BADGES */
+  .skill-badges-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    padding-left: 0;
+    list-style: none; /* Bỏ dấu chấm tròn đầu dòng */
+  }
+
+  .skill-badge {
+    background-color: #383838; /* Màu nền xám (cố định mã màu để tránh lỗi biến) */
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 6px 14px;
+    border-radius: 50px; /* Bo tròn hình viên thuốc */
+    border: 1px solid #444;
+    transition: 0.2s ease;
+    cursor: default;
+    display: inline-block; /* Đảm bảo nút không bị giãn full dòng */
+  }
+
+  .skill-badge:hover {
+    background-color: #ffdb70; /* Màu vàng cam */
+    color: #1e1e1f; /* Chữ màu đen khi hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  /* Ẩn bớt các khoảng cách thừa nếu có */
+  .skills-item {
+    margin-bottom: 10px;
+  }
+</style>
 </head>
 
 <body>
