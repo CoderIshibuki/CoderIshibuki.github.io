@@ -1880,3 +1880,45 @@ textarea.form-input::-webkit-resizer {
     max-width: 700px;
   }
 }
+/* ----------------------------------- */
+/* THÊM STYLE MỚI CHO SKILLS (TAGS)    */
+/* ----------------------------------- */
+
+.skill-badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.skill-badge {
+  background: var(--jet); /* Màu nền tối */
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  padding: 8px 16px;
+  border-radius: 12px; /* Bo góc mềm mại */
+  box-shadow: var(--shadow-2);
+  transition: var(--transition-1);
+  cursor: default;
+}
+
+/* Hiệu ứng khi di chuột vào badge */
+.skill-badge:hover {
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-3);
+}
+
+/* Chỉnh lại title wrapper trong skill item để bỏ khoảng cách thừa */
+.skills-item .title-wrapper {
+  margin-bottom: 5px;
+}
+
+/* Light mode support */
+html[data-theme="light"] .skill-badge {
+  background: var(--eerie-black-1);
+  color: var(--white-1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

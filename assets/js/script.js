@@ -175,6 +175,7 @@ const translations = {
   vi: {
     // Sidebar
     name: "Phat Tran Vu Hoa",
+    certificates: "Chứng chỉ",
     jobTitle: "Sinh viên năm nhất",
     showContacts: "Hiện thông tin liên hệ",
     contactEmail: "Email",
@@ -213,6 +214,11 @@ const translations = {
     skillTime: "Quản lý thời gian",
     // CV
     education: "Học vấn",
+    otherSkills: "Khác",
+    mySkills: "Kỹ năng",
+    catProgLang: "Ngôn ngữ lập trình",
+    catWebTools: "Web & Công cụ",
+    catOthers: "Khác",
     edu1Title: "Đại học Sư phạm TP.HCM",
     edu1Time: "2025 — Hiện tại",
     edu1Desc: "Đang học",
@@ -225,9 +231,6 @@ const translations = {
     experience: "Kinh nghiệm",
     exp1Title: "Các cuộc thi",
     exp1Desc: "Thành viên đội tuyển HSG Tin học",
-    exp2Title: "Tự học An ninh mạng",
-    exp2Time: "2024 — Hiện tại",
-    exp2Desc: "Tự học kiểm thử xâm nhập và lập trình",
     // Dự án
     filterAll: "Tất cả",
     filterSystem: "Hệ thống & Mạng",
@@ -293,6 +296,8 @@ const translations = {
     skillTime: "Time Management",
     // CV
     education: "Education",
+    otherSkills: "Others",
+    certificates: "Certificates",
     edu1Title: "Ho Chi Minh City University of Education (HCMUE)",
     edu1Time: "2025 — Present",
     edu1Desc: "Studying",
