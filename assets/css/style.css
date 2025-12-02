@@ -1922,3 +1922,56 @@ html[data-theme="light"] .skill-badge {
   color: var(--white-1);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+/* --- BẮT ĐẦU CODE MỚI CHO SKILLS --- */
+
+.skill-badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 25px; /* Tạo khoảng cách giữa các nhóm */
+  padding-left: 0; /* Xóa padding mặc định của thẻ ul */
+}
+
+.skill-badge {
+  background: var(--jet); /* Nền nút màu xám tối */
+  color: var(--white-2); /* Màu chữ sáng để dễ đọc */
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  padding: 8px 16px;
+  border-radius: 12px; /* Bo góc */
+  box-shadow: var(--shadow-2);
+  transition: var(--transition-1);
+  border: 1px solid var(--jet); /* Viền mỏng */
+}
+
+/* Hiệu ứng khi di chuột vào */
+.skill-badge:hover {
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola); /* Chữ chuyển màu vàng cam */
+  transform: translateY(-2px); /* Nổi lên nhẹ */
+  box-shadow: var(--shadow-3);
+  border-color: var(--orange-yellow-crayola);
+}
+
+/* Căn chỉnh lại tiêu đề nhóm cho đẹp hơn */
+.skills-item .title-wrapper {
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--jet); /* Gạch chân nhẹ phân cách */
+  padding-bottom: 5px;
+  display: inline-block; /* Để gạch chân chỉ dài bằng chữ */
+}
+
+/* Light mode (Chế độ sáng) */
+html[data-theme="light"] .skill-badge {
+  background: var(--eerie-black-1);
+  color: var(--jet);
+  border: 1px solid var(--light-gray-70);
+}
+
+html[data-theme="light"] .skill-badge:hover {
+  background: var(--orange-yellow-crayola);
+  color: var(--white-1);
+}
+
+/* --- KẾT THÚC CODE MỚI --- */
