@@ -1975,3 +1975,76 @@ html[data-theme="light"] .skill-badge:hover {
 }
 
 /* --- KẾT THÚC CODE MỚI --- */
+
+/* --- STYLE MỚI CHO ICON KỸ NĂNG --- */
+.skill-icons-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px; /* Khoảng cách giữa các icon */
+  margin-top: 15px;
+  margin-bottom: 25px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.skill-icon-item {
+  transition: var(--transition-1);
+}
+
+.skill-icon-item img {
+  width: 55px; /* Kích thước icon lớn hơn */
+  height: 55px;
+  object-fit: contain;
+  filter: grayscale(0.2); /* Làm dịu màu một chút */
+  transition: 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột vào icon */
+.skill-icon-item:hover img {
+  transform: scale(1.15) translateY(-5px); /* Phóng to và bay lên */
+  filter: grayscale(0); /* Hiện màu gốc rực rỡ */
+  filter: drop-shadow(0 5px 15px rgba(255, 219, 112, 0.4)); /* Bóng sáng màu vàng */
+}
+
+/* --- STYLE CHO MODULE CHỨNG CHỈ (List con) --- */
+.cert-modules {
+  margin-top: 15px;
+  margin-left: 20px;
+  list-style: none;
+  border-left: 2px solid var(--jet);
+  padding-left: 20px;
+}
+
+.cert-modules li {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+/* Dấu chấm tròn trang trí cho module con */
+.cert-modules li::before {
+  content: "";
+  position: absolute;
+  left: -26px; /* Căn chỉnh với đường kẻ dọc */
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  background: var(--jet);
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.cert-modules li:hover::before {
+  background: var(--orange-yellow-crayola);
+}
+
+.cert-modules a {
+  color: var(--light-gray);
+  font-size: var(--fs-7); /* Nhỏ hơn tiêu đề chính một chút */
+  transition: var(--transition-1);
+  display: inline-block;
+}
+
+.cert-modules a:hover {
+  color: var(--orange-yellow-crayola);
+  transform: translateX(5px);
+}
