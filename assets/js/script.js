@@ -198,7 +198,7 @@ const translations = {
     // Giới thiệu
     aboutTitle: "Về tôi",
     aboutDesc1: "Tôi là sinh viên năm nhất tại Trường Đại học Sư phạm Thành phố Hồ Chí Minh (HCMUE)",
-    aboutDesc2: "Tôi sở hữu niềm đam mê mạnh mẽ và sự tò mò không ngừng trong lĩnh vực an ninh mạng, được nuôi dưỡng thông qua quá trình tìm hiểu liên tục về các kỹ thuật bảo mật hiện đại. Sở thích của tôi không chỉ dừng lại ở một khía cạnh riêng lẻ mà là sự giao thoa giữa ba mảng kiến thức then chốt: Kiểm thử xâm nhập giúp tôi có cái nhìn thực tế về các phương thức tấn công, Săn lỗi bảo mật rèn luyện cho tôi sự nhạy bén và kiên nhẫn để phát hiện những sai sót nhỏ nhất, và hiểu biết vững chắc về Mạng & Hệ thống chính là nền tảng để tôi hiểu được bức tranh toàn cảnh về cách một tổ chức vận hành và bảo vệ tài sản số của mình. Tôi luôn tìm kiếm cơ hội để tích hợp các kỹ năng này nhằm mang lại một góc nhìn đa chiều và giải pháp bảo mật tối ưu.",
+    aboutDesc2: "Web Development, Entry-Level Security Analyst",
     whatIDo: "Những gì tôi đang làm",
     whatIDoTitle1: "Sinh viên",
     whatIDoDesc1: "Học Công nghệ Thông tin tại HCMUE",
@@ -285,7 +285,7 @@ const translations = {
     // Giới thiệu
     aboutTitle: "About me",
     aboutDesc1: "I am a first-year student at Ho Chi Minh City University of Education (HCMUE).",
-    aboutDesc2: " possess a profound passion and relentless curiosity for the field of cybersecurity, cultivated through continuous learning about modern security techniques. My interest extends beyond a single domain to the intersection of three key areas: Penetration Testing, which provides me with a practical understanding of attack methodologies; Bug Bounty Hunting, which hones my acuity and patience to uncover the most subtle flaws; and a solid foundation in Network & Systems, which is crucial for comprehending the complete picture of how an organization operates and secures its digital assets. I am constantly seeking opportunities to integrate these skills to provide a multidimensional perspective and deliver optimal security solutions.",
+    aboutDesc2: "Web Development, Entry-Level Security Analyst";
     whatIDo: "What I'm doing",
     whatIDoTitle1: "Student",
     whatIDoDesc1: "Studying Information Technology at HCMUE",
