@@ -285,7 +285,7 @@ const translations = {
     // Giới thiệu
     aboutTitle: "About me",
     aboutDesc1: "I am a first-year student at Ho Chi Minh City University of Education (HCMUE).",
-    aboutDesc2: "Web Development, Entry-Level Security Analyst";
+    aboutDesc2: "Web Development, Entry-Level Security Analyst",
     whatIDo: "What I'm doing",
     whatIDoTitle1: "Student",
     whatIDoDesc1: "Studying Information Technology at HCMUE",
