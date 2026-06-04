@@ -1,490 +1,296 @@
-<!DOCTYPE html>
-<html lang="vi" data-theme="dark"> <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Phat Tran Vu Hoa</title>
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-  /* CSS ÉP BUỘC CHO SKILL BADGES */
-  .skill-badges-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    padding-left: 0;
-    list-style: none; /* Bỏ dấu chấm tròn đầu dòng */
-  }
+<!doctype html>
+<html lang="vi" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Phat Tran Vu Hoa</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.ico"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #121212;
+        --card-bg: #1e1e1f;
+        --text-main: #fafafa;
+        --text-muted: #d6d6d6;
+        --accent: #ffdb70;
+        --border: #383838;
+        --hover-bg: #2b2b2c;
+      }
 
-  .skill-badge {
-    background-color: #383838; /* Màu nền xám (cố định mã màu để tránh lỗi biến) */
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 400;
-    padding: 6px 14px;
-    border-radius: 50px; /* Bo tròn hình viên thuốc */
-    border: 1px solid #444;
-    transition: 0.2s ease;
-    cursor: default;
-    display: inline-block; /* Đảm bảo nút không bị giãn full dòng */
-  }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-  .skill-badge:hover {
-    background-color: #ffdb70; /* Màu vàng cam */
-    color: #1e1e1f; /* Chữ màu đen khi hover */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  
-  /* Ẩn bớt các khoảng cách thừa nếu có */
-  .skills-item {
-    margin-bottom: 10px;
-  }
-</style>
-</head>
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
 
-<body>
-  <main>
-    <aside class="sidebar" data-sidebar>
-      <div class="sidebar-info">
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.jpg" alt="Phat Tran Vu Hoa" width="70">
-        </figure>
-        <div class="info-content">
-          <h1 class="name" data-lang-key="name">Phat Tran Vu Hoa</h1>
-          <p class="title" data-lang-key="jobTitle">Sinh viên năm nhất</p>
+      .container {
+        width: 100%;
+        max-width: 480px;
+        text-align: center;
+        animation: fadeIn 0.8s ease backwards;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--border);
+        margin-bottom: 15px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+      }
+
+      .avatar:hover {
+        transform: scale(1.05);
+        border-color: var(--accent);
+      }
+
+      h1 {
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--text-main);
+      }
+
+      p.title {
+        font-size: 14px;
+        color: var(--text-muted);
+        background: var(--card-bg);
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        margin-bottom: 30px;
+      }
+
+      .links-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .link-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: var(--card-bg);
+        color: var(--text-main);
+        text-decoration: none;
+        padding: 16px 20px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .link-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(255, 219, 112, 0.1),
+          transparent
+        );
+        transform: translateX(-100%);
+        transition: 0.5s;
+      }
+
+      .link-item:hover::before {
+        transform: translateX(100%);
+      }
+
+      .link-item:hover {
+        background-color: var(--hover-bg);
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      }
+
+      .link-item ion-icon {
+        font-size: 22px;
+        position: absolute;
+        left: 20px;
+      }
+
+      .section-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 45px 0 20px 0;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 10px;
+        color: var(--text-main);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .section-title ion-icon {
+        color: var(--accent);
+      }
+
+      .cert-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .cert-item {
+        background-color: var(--card-bg);
+        padding: 18px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        text-align: left;
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease;
+        position: relative;
+      }
+
+      .cert-item:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent);
+      }
+
+      .cert-title {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 6px;
+        color: var(--text-main);
+      }
+
+      .cert-desc {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="./assets/images/my-avatar.jpg"
+        alt="Phat Tran Vu Hoa"
+        class="avatar"
+      />
+      <h1>Phat Tran Vu Hoa</h1>
+      <p class="title">Sinh viên</p>
+
+      <div class="links-wrapper">
+        <a href="mailto:tranvuhoaphat@gmail.com" class="link-item">
+          <ion-icon name="mail-outline"></ion-icon>
+          Email
+        </a>
+        <a href="tel:+84338295267" class="link-item">
+          <ion-icon name="call-outline"></ion-icon>
+          Điện thoại
+        </a>
+        <a
+          href="https://facebook.com/kaliyuki.info"
+          target="_blank"
+          class="link-item"
+        >
+          <ion-icon name="logo-facebook"></ion-icon>
+          Facebook
+        </a>
+        <a
+          href="https://github.com/coderishibuki"
+          target="_blank"
+          class="link-item"
+        >
+          <ion-icon name="logo-github"></ion-icon>
+          GitHub
+        </a>
+        <a
+          href="https://profile.hackthebox.com/profile/019e8db8-e853-7172-bc5b-ab532a609265"
+          target="_blank"
+          class="link-item"
+        >
+          <ion-icon name="cube-outline"></ion-icon>
+          HackTheBox
+        </a>
+        <a href="#" target="_blank" class="link-item">
+          <ion-icon name="code-slash-outline"></ion-icon>
+          LeetCode
+        </a>
+        <a
+          href="https://threatfox.abuse.ch/user/50650/"
+          target="_blank"
+          class="link-item"
+        >
+          <ion-icon name="bug-outline"></ion-icon>
+          ThreatFox
+        </a>
+      </div>
+
+      <h2 class="section-title">
+        <ion-icon name="ribbon-outline"></ion-icon>
+        Chứng chỉ
+      </h2>
+      <div class="cert-list">
+        <!-- Mẫu chứng chỉ, bạn có thể copy block này để thêm chứng chỉ mới -->
+        <div class="cert-item">
+          <h3 class="cert-title">
+            Google Cybersecurity Professional Certificate
+          </h3>
+          <p class="cert-desc">Coursera - Google Career Certificates (2026)</p>
         </div>
-        <button class="info_more-btn" data-sidebar-btn>
-          <span data-lang-key="showContacts">Hiện thông tin liên hệ</span>
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-      </div>
 
-      <div class="sidebar-info_more">
-        <div class="separator"></div>
-        <ul class="contacts-list">
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title" data-lang-key="contactEmail">Email</p>
-              <a href="mailto:tranvuhoaphat@gmail.com" class="contact-link">tranvuhoaphat@gmail.com</a>
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title" data-lang-key="contactPhone">Điện thoại</p>
-              <a href="tel:+84338295267" class="contact-link">+84 338 295 267</a>
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title" data-lang-key="contactBirthday">Ngày sinh</p>
-              <time datetime="2007-09-27" data-lang-key="birthdayValue">27 tháng 9, 2007</time>
-            </div>
-          </li>
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title" data-lang-key="contactLocation">Địa chỉ</p>
-              <address data-lang-key="locationValue">Ngã Năm, Cần Thơ, Việt Nam</address>
-            </div>
-          </li>
-        </ul>
-        <div class="separator"></div>
-        <ul class="social-list">
-          <li class="social-item">
-            <a href="https://facebook.com/kaliyuki.info" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-          <li class="social-item">
-            <a href="https://github.com/coderishibuki" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-          <li class="social-item">
-            <a href="https://discord.gg/uAB5WjdHDc" class="social-link">
-              <ion-icon name="logo-discord"></ion-icon>
-            </a>
-          </li>
-        </ul>
-
-        <div class="separator"></div>
-        <div class="settings-list">
-          <div class="settings-item">
-            <p class="settings-title" data-lang-key="theme">Chế độ</p>
-            <div class="settings-toggle-box">
-              <span class="settings-label" data-lang-key="light">Tối</span>
-              <button class="toggle-btn" id="theme-toggle" aria-label="toggle theme">
-                <div class="toggle-icon"></div>
-              </button>
-              <span class="settings-label" data-lang-key="dark">Sáng</span>
-            </div>
-          </div>
-          <div class="settings-item">
-            <p class="settings-title" data-lang-key="language">Ngôn ngữ</p>
-            <div class="settings-toggle-box">
-              <span class="settings-label">VI</span>
-              <button class="toggle-btn" id="lang-toggle" aria-label="toggle language">
-                <div class="toggle-icon"></div>
-              </button>
-              <span class="settings-label">EN</span>
-            </div>
-          </div>
-        </div>
-        </div>
-    </aside>
-
-    <div class="main-content">
-      <nav class="navbar">
-        <ul class="navbar-list">
-          <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link data-nav-to="giới thiệu" data-lang-key="navAbout">Giới thiệu</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link data-nav-to="cv" data-lang-key="navResume">CV</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link data-nav-to="dự án" data-lang-key="navPortfolio">Dự án</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link data-nav-to="báo cáo" data-lang-key="navBlog">Báo cáo</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link data-nav-to="liên hệ" data-lang-key="navContact">Liên hệ</button>
-          </li>
-        </ul>
-      </nav>
-
-      <article class="about active" data-page="giới thiệu">
-        <header>
-          <h2 class="h2 article-title" data-lang-key="aboutTitle">About me</h2>
-        </header>
-        
-        <section class="about-text">
-          <p data-lang-key="aboutDesc1">Tôi là sinh viên năm nhất tại Trường Đại học Sư phạm Thành phố Hồ Chí Minh (HCMUE)</p>
-          <p data-lang-key="aboutDesc2">Tôi có niềm đam mê mạnh mẽ với an ninh mạng, với sự quan tâm sâu sắc đến kiểm thử xâm nhập, săn lỗi bảo mật, và mạng & hệ thống.</p>
-        </section>
-
-        <section class="service">
-          <h3 class="h3 service-title" data-lang-key="whatIDo">Những gì tôi đang làm</h3>
-          <ul class="service-list">
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-study.png" alt="Study icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title" data-lang-key="whatIDoTitle1">Sinh viên</h4>
-                <p class="service-item-text" data-lang-key="whatIDoDesc1">Học Công nghệ Thông tin tại HCMUE</p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-clb.png" alt="club icon" width="40">
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title" data-lang-key="whatIDoTitle2">Thành viên CLB</h4>
-                <p class="service-item-text" data-lang-key="whatIDoDesc2">Câu lạc bộ Tin học Khoa Công nghệ Thông tin</p>
-              </div>
-            </li>
-          </ul>
-        </section>
-
-       <section class="skill">
-  <h3 class="h3 skills-title" data-lang-key="mySkills">Kỹ năng</h3>
-
-  <ul class="skills-list content-card">
-    
-    <li class="skills-item">
-      <div class="title-wrapper">
-        <h5 class="h5" data-lang-key="catProgLang">Ngôn ngữ lập trình</h5>
-      </div>
-      
-      <ul class="skill-icons-list">
-        <li class="skill-icon-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" title="C++">
-        </li>
-        <li class="skill-icon-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python">
-        </li>
-      </ul>
-    </li>
-
-    <li class="skills-item">
-      <div class="title-wrapper">
-        <h5 class="h5" data-lang-key="catWeb">Web</h5>
-      </div>
-      
-      <ul class="skill-icons-list">
-        <li class="skill-icon-item">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/html5/html5-original.svg" alt="HTML5" title="HTML5">
-        </li>
-        <li class="skill-icon-item">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/css3/css3-original.svg" alt="CSS3" title="CSS3">
-        </li>
-        <li class="skill-icon-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript">
-        </li>
-        <li class="skill-icon-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" title="PHP">
-        </li>
-      </ul>
-    </li>
-
-    <li class="skills-item">
-      <div class="title-wrapper">
-        <h5 class="h5" data-lang-key="catTools">Công cụ</h5>
-      </div>
-      
-      <ul class="skill-icons-list">
-        <li class="skill-icon-item">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/github/github-original.svg" alt="Github" title="Github">
-        </li>
-        <li class="skill-icon-item">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/vscode/vscode-original.svg" alt="VS Code" title="VS Code">
-        </li>
-        <li class="skill-icon-item">
-          <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/kalilinux/kalilinux-original.svg" alt="Kali Linux" title="Kali Linux">
-        </li>
-      </ul>
-    </li>
-
-  </ul>
-</section>
-      </article>
-
-      <article class="resume" data-page="cv">
-        <header>
-          <h2 class="h2 article-title" data-lang-key="navResume">CV</h2>
-        </header>
-
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-            <h3 class="h3" data-lang-key="education">Học vấn</h3>
-          </div>
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title" data-lang-key="edu1Title">Đại học Sư phạm TP.HCM</h4>
-              <span data-lang-key="edu1Time">2025 — Hiện tại</span>
-              <p class="timeline-text" data-lang-key="edu1Desc">Đang học</p>
-            </li>
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title" data-lang-key="edu2Title">THPT Mai Thanh Thế</h4>
-              <span>2022 — 2025</span>
-              <p class="timeline-text" data-lang-key="edu2Desc">Tốt nghiệp loại Xuất sắc</p>
-            </li>
-          </ol>
-        </section>
-
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-            <h3 class="h3" data-lang-key="experience">Kinh nghiệm</h3>
-          </div>
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title" data-lang-key="exp1Title"></h4>
-              <span></span>
-              <p class="timeline-text" data-lang-key="exp1Desc"></p>
-            </li>
-          </ol>
-        </section>
-
-        <section class="timeline">
-  <div class="title-wrapper">
-    <div class="icon-box">
-      <ion-icon name="ribbon-outline"></ion-icon>
+        <!-- Nơi thêm các chứng chỉ mới trong tương lai -->
+        <!-- 
+      <div class="cert-item">
+        <h3 class="cert-title">Tên chứng chỉ mới</h3>
+        <p class="cert-desc">Nơi cấp (Năm)</p>
+      </div> 
+      --></div>
     </div>
-    <h3 class="h3" data-lang-key="certificates">Chứng chỉ</h3>
-  </div>
 
-  <ol class="timeline-list">
-    
-
-    <li class="timeline-item">
-      <h4 class="h4 timeline-item-title">Google Cybersecurity Professional Certificate</h4>
-      <span>2026</span>
-      <p class="timeline-text">Coursera - Google Career Certificates</p>
-    </li>
-
-  </ol>
-</section>
-      </article>
-
-      <article class="portfolio" data-page="dự án">
-        <header>
-          <h2 class="h2 article-title" data-lang-key="navPortfolio">Dự án</h2>
-        </header>
-
-        <section class="projects">
-          <ul class="filter-list">
-            <li class="filter-item">
-              <button class="active" data-filter-btn data-filter-value="tất cả" data-lang-key="filterAll">Tất cả</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn data-filter-value="hệ thống & mạng" data-lang-key="filterSystem">Hệ thống & Mạng</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn data-filter-value="thiết kế & phát triển web" data-lang-key="filterWeb">Thiết kế & Phát triển web</button>
-            </li>
-          </ul>
-
-          <div class="filter-select-box">
-            <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value data-lang-key="selectCategory">Chọn danh mục</div>
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-            </button>
-            <ul class="select-list">
-              <li class="select-item">
-                <button data-select-item data-filter-value="tất cả" data-lang-key="filterAll">Tất cả</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item data-filter-value="hệ thống & mạng" data-lang-key="filterSystemMobile">Hệ Thống & Mạng</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item data-filter-value="thiết kế & phát triển web" data-lang-key="filterWebMobile">Thiết kế & Phát triển web</button>
-              </li>
-            </ul>
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item active" data-filter-item data-category="thiết kế & phát triển web">
-              <a href="https://port-ai-seven.vercel.app/">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-1.png" alt="Typing" loading="lazy">
-                </figure>
-                <h3 class="project-title" data-lang-key="project1Title">Mô hình AI Portfolio</h3>
-                <p class="project-category" data-lang-key="project1Cat">Thiết kế & Phát triển web</p>
-              </a>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="thiết kế & phát triển web">
-              <a href="https://coderishibuki.github.io/">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-2.png" alt="Portfolio Cá nhân" loading="lazy">
-                </figure>
-                <h3 class="project-title" data-lang-key="project2Title">Portfolio Cá nhân</h3>
-                <p class="project-category" data-lang-key="project2Cat">Thiết kế & Phát triển web</p>
-              </a>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="thiết kế & phát triển web">
-              <a href="https://github.com/CoderIshibuki/NoobDev">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-4.png" alt="Typing" loading="lazy">
-                </figure>
-                <h3 class="project-title" data-lang-key="project4Title">Website Luyện gõ bàn phím</h3>
-                <p class="project-category" data-lang-key="project4Cat">Thiết kế & Phát triển web</p>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </article>
-
-      <article class="blog" data-page="báo cáo">
-        <header>
-          <h2 class="h2 article-title" data-lang-key="navBlog">Báo cáo</h2>
-        </header>
-
-        <section class="blog-posts">
-          <ul class="blog-posts-list">
-            <li class="blog-post-item">
-              <a href="https://1drv.ms/b/c/350bb0ea8c9fda52/EWSC1i1aQ0VLo-fx776StlgBEiPisuk6S3RRGzEoAJXh_A?e=7fFRSZ">
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/report-1.png" alt="DOM report" loading="lazy">
-                </figure>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <p class="blog-category">HTML</p>
-                    <span class="dot"></span>
-                    <time datetime="2025-10-15" data-lang-key="blog1Date">15 tháng 10, 2025</time>
-                  </div>
-                  <h3 class="h3 blog-item-title" data-lang-key="blog1Title">Document Object Model</h3>
-                  <p class="blog-text" data-lang-key="blog1Desc">Bài báo cáo API</p>
-                </div>
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="https://1drv.ms/b/c/350bb0ea8c9fda52/IQDXTvhJO6kpTJa0CxvvU66gAU8jWnrzEfSI9zqqP2RGHtA?e=fdn03z">
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/report-2.png" alt="DOM report" loading="lazy">
-                </figure>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <p class="blog-category">HTML</p>
-                    <span class="dot"></span>
-                    <time datetime="2025-10-15" data-lang-key="blog2Date">1 tháng 12, 2025</time>
-                  </div>
-                  <h3 class="h3 blog-item-title" data-lang-key="blog2Title">Typing Website Report</h3>
-                  <p class="blog-text" data-lang-key="blog2Desc">Bài báo cáo dự án cuối kỳ</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </article>
-
-      <article class="contact" data-page="liên hệ">
-        <header>
-          <h2 class="h2 article-title" data-lang-key="navContact">Liên hệ</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15737.414929127943!2d105.58752836067346!3d9.5647443483118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0fd4a65025975%3A0xce57b6d312950f0b!2zTmfDoyBOxINtLCBTw7NjIFRyxINuZywgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1763292652799!5m2!1svi!2s" width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-          <h3 class="h3 form-title" data-lang-key="contactFormTitle">Form liên hệ</h3>
-          <form action="#" class="form" data-form>
-            <div class="input-wrapper">
-              <input type="text" name="name" class="form-input" placeholder="Họ và tên" required data-form-input data-lang-key="formName">
-              <input type="email" name="email" class="form-input" placeholder="Địa chỉ email" required data-form-input data-lang-key="formEmail">
-            </div>
-            <textarea name="message" class="form-input" placeholder="Tin nhắn của bạn" required data-form-input data-lang-key="formMessage"></textarea>
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span data-lang-key="formSend">Gửi tin nhắn</span>
-            </button>
-          </form>
-        </section>
-      </article>
-    </div>
-  </main>
-
-  <script src="./assets/js/script.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
