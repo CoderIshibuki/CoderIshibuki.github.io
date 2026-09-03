@@ -71,9 +71,7 @@ export default function Navbar() {
         <Tooltip>
           <TooltipTrigger asChild>
             <DockIcon className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors rounded-md">
-              <div className="flex size-full items-center justify-center">
-                <ModeToggle className="size-4 bg-transparent shadow-none border-none p-0 hover:bg-transparent" />
-              </div>
+              <ModeToggle className="flex size-full items-center justify-center bg-transparent shadow-none border-none p-0 hover:bg-transparent [&>svg]:size-4" />
             </DockIcon>
           </TooltipTrigger>
           <TooltipContent side="top" sideOffset={12} className="bg-black text-white dark:bg-white dark:text-black rounded-lg px-3 py-1.5 text-sm font-medium">

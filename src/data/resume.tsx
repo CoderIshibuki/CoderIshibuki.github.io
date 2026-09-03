@@ -19,7 +19,7 @@ export const DATA = {
   location: "Ho Chi Minh City, Vietnam",
   locationLink: "https://www.google.com/maps/place/Ho+Chi+Minh+City",
   description:
-    "Focused on Full-Stack Development, AI Engineering & Research.",
+    "Full name is Tran Vu Hoa Phat, I am focused on Full-Stack Development, AI Engineering & Research.",
   summary:
     "I am focused on solving complex problems and writing clean, maintainable code. My passion lies at the intersection of systems architecture, algorithmic optimization, and building meaningful technologies that scale.",
   avatarUrl: "/me.png",
@@ -98,7 +98,13 @@ export const DATA = {
         name: "Send Email",
         url: "mailto:tranvuhoaphat@gmail.com",
         icon: Icons.email,
-        navbar: false,
+        navbar: true,
+      },
+      phone: {
+        name: "Call Phone",
+        url: "tel:0338295267",
+        icon: Icons.phone,
+        navbar: true,
       },
     },
   },

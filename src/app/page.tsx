@@ -41,7 +41,7 @@ export default function Page() {
               <BlurFadeText
                 className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
                 delay={BLUR_FADE_DELAY}
-                text={`Full name is ${DATA.name}, I am a full-stack developer passionate about building scalable and impactful applications.`}
+                text={DATA.description}
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
@@ -161,34 +161,6 @@ export default function Page() {
       <section id="projects">
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
           <ProjectsSection />
-        </BlurFade>
-      </section>
-
-      <section id="tech-cloud">
-        <BlurFade delay={BLUR_FADE_DELAY * 12}>
-          <div className="flex justify-center items-center py-8">
-            <IconCloud 
-              icons={[
-                <ReactLight key="react" />,
-                <NextjsIconDark key="nextjs" />,
-                <Typescript key="ts" />,
-                <Nodejs key="node" />,
-                <Python key="py" />,
-                <Golang key="go" />,
-                <Postgresql key="pg" />,
-                <Docker key="docker" />,
-                <Kubernetes key="k8s" />,
-                <Java key="java" />,
-                <Csharp key="cs" />
-              ]}
-            />
-          </div>
-        </BlurFade>
-      </section>
-
-      <section id="contact">
-        <BlurFade delay={BLUR_FADE_DELAY * 16}>
-          <ContactSection />
         </BlurFade>
       </section>
     </main>
