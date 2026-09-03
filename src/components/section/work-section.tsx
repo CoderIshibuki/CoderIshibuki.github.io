@@ -1,22 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState } from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { DATA } from "@/data/resume";
-import { ChevronDown, ChevronRight, Building2 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 function LogoImage({ src, alt }: { src: string; alt: string }) {
   const [imageError, setImageError] = useState(false);
 
   if (!src || imageError) {
     return (
-      <div className="size-12 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
+      <div className="size-12 rounded-full bg-muted flex-none" />
     );
   }
 
@@ -24,7 +18,7 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
     <img
       src={src}
       alt={alt}
-      className="size-12 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none bg-background"
+      className="size-12 rounded-full overflow-hidden object-contain flex-none bg-background"
       onError={() => setImageError(true)}
     />
   );
@@ -32,69 +26,47 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
 
 export default function WorkSection() {
   return (
-    <Accordion type="single" collapsible className="w-full grid gap-6">
-      {DATA.work.map((work) => (
-        <AccordionItem
-          key={work.company}
-          value={work.company}
-          className="w-full border-b-0 grid gap-2"
-        >
-          <AccordionTrigger className="hover:no-underline p-0 cursor-pointer transition-colors rounded-none group [&>svg]:hidden">
-            <div className="flex items-center gap-x-3 justify-between w-full text-left">
-              <div className="flex items-center gap-x-3 flex-1 min-w-0">
-                <LogoImage src={work.logoUrl} alt={work.company} />
-                <div className="flex-1 min-w-0 gap-0.5 flex flex-col">
-                  <div className="font-semibold leading-none flex items-center gap-2">
-                    {work.company}
-                    <span className="relative inline-flex items-center w-3.5 h-3.5">
-                      <ChevronRight
-                        className={cn(
-                          "absolute h-3.5 w-3.5 shrink-0 text-muted-foreground stroke-2 transition-all duration-300 ease-out",
-                          "translate-x-0 opacity-0",
-                          "group-hover:translate-x-1 group-hover:opacity-100",
-                          "group-data-[state=open]:opacity-0 group-data-[state=open]:translate-x-0"
-                        )}
-                      />
-                      <ChevronDown
-                        className={cn(
-                          "absolute h-3.5 w-3.5 shrink-0 text-muted-foreground stroke-2 transition-all duration-200",
-                          "opacity-0 rotate-0",
-                          "group-data-[state=open]:opacity-100 group-data-[state=open]:rotate-180"
-                        )}
-                      />
-                    </span>
-                  </div>
-                  <div className="font-sans text-sm text-muted-foreground">
-                    {work.title}
+    <div className="w-full grid gap-6">
+      {DATA.work.map((work) => {
+        const Wrapper = work.href && work.href !== "#" && work.href !== "" ? Link : "div";
+        return (
+          <div key={work.company} className="w-full grid gap-2">
+            <Wrapper
+              href={work.href || "#"}
+              target={work.href && work.href !== "#" && work.href !== "" ? "_blank" : undefined}
+              className="p-0 cursor-pointer transition-colors group"
+            >
+              <div className="flex items-center gap-x-3 justify-between w-full text-left">
+                <div className="flex items-center gap-x-3 flex-1 min-w-0">
+                  <LogoImage src={work.logoUrl} alt={work.company} />
+                  <div className="flex-1 min-w-0 gap-0.5 flex flex-col">
+                    <div className="font-semibold leading-none flex items-center gap-2">
+                      {work.company}
+                      {work.href && work.href !== "#" && work.href !== "" && (
+                        <ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground stroke-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" />
+                      )}
+                    </div>
+                    <div className="font-sans text-sm text-muted-foreground">
+                      {work.title}
+                    </div>
                   </div>
                 </div>
+                <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
+                  <span>
+                    {work.start} - {work.end ?? "Present"}
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
-                <span>
-                  {work.start} - {work.end ?? "Present"}
-                </span>
-              </div>
-            </div>
-          </AccordionTrigger>
-          <AccordionContent className="p-0 ml-15 text-xs sm:text-sm text-muted-foreground">
-            {work.description}
-            {work.href && work.href !== "#" && work.href !== "" && (
-              <div className="mt-4">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
-                  href={work.href}
-                >
-                  <Building2 className="mr-1 size-3" aria-hidden="true" />
-                  Visit Site
-                </a>
+            </Wrapper>
+            {work.description && (
+              <div className="ml-15 text-xs sm:text-sm text-muted-foreground">
+                {work.description}
               </div>
             )}
-          </AccordionContent>
-        </AccordionItem>
-      ))}
-    </Accordion>
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
