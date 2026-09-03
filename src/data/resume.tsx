@@ -106,7 +106,7 @@ export const DATA = {
   work: [
     {
       company: "HCMUE Olympic Informatics Team",
-      href: "",
+      href: "https://olp.hcmue.edu.vn/",
       badges: [],
       location: "Ho Chi Minh City",
       title: "Member — Open Source Software Category",
