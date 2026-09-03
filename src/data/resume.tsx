@@ -130,7 +130,7 @@ export const DATA = {
   education: [
     {
       school: "Ho Chi Minh City University of Education",
-      href: "#",
+      href: "https://hcmue.edu.vn/",
       degree: "Bachelor of Information Technology",
       logoUrl: "",
       start: "2025",
