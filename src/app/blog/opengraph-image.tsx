@@ -2,7 +2,7 @@
 import { ImageResponse } from "next/og";
 import { DATA } from "@/data/resume";
 
-export const runtime = "edge";
+export const dynamic = "force-static";
 
 export const alt = "Blog";
 export const size = {
@@ -105,14 +105,28 @@ const styles = {
     },
 } as const;
 
+import fs from "fs";
+import path from "path";
+
+const getImageData = () => {
+    try {
+        const imagePath = path.join(process.cwd(), "public", "me.png");
+        if (fs.existsSync(imagePath)) {
+            const buffer = fs.readFileSync(imagePath);
+            return `data:image/png;base64,${buffer.toString("base64")}`;
+        }
+    } catch {
+        return undefined;
+    }
+    return undefined;
+};
+
 export default async function Image() {
     try {
         const fontData = await getFontData();
         const title = "Blog";
         const description = "Thoughts on software development, life, and more.";
-        const imageUrl = DATA.avatarUrl
-            ? new URL(DATA.avatarUrl, DATA.url).toString()
-            : undefined;
+        const imageUrl = getImageData();
 
         return new ImageResponse(
             (
@@ -121,7 +135,7 @@ export default async function Image() {
                         <div style={styles.wrapper}>
                             {imageUrl && (
                                 <div style={styles.imageSection}>
-                                    <img src={imageUrl} alt="Blog" style={styles.image} />
+                                    <img src={imageUrl} alt="Blog" width="140" height="140" style={styles.image} />
                                 </div>
                             )}
                             <div style={styles.mainContainer}>

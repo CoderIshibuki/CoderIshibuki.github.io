@@ -117,7 +117,7 @@ export const DATA = {
       location: "Ho Chi Minh City",
       title: "Member — Open Source Software Category",
       logoUrl: "/hcmue-logo.png",
-      start: "Ongoing",
+      start: "May 2026",
       end: "Present",
       description: "Member of the open source software category for the Olympic Informatics Team.",
     },
@@ -128,7 +128,7 @@ export const DATA = {
       location: "Ho Chi Minh City",
       title: "Member",
       logoUrl: "/clb-tinhoc.png",
-      start: "Ongoing",
+      start: "Oct 2025",
       end: "Present",
       description: "Member of the HCMUE Informatics Club.",
     }

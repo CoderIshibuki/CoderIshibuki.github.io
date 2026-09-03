@@ -1,6 +1,7 @@
+"use client";
+
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "@/components/mode-toggle";
-import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
   TooltipContent,
@@ -35,10 +36,7 @@ export default function Navbar() {
             </Tooltip>
           );
         })}
-        <Separator
-          orientation="vertical"
-          className="h-full py-2 m-auto w-[1px] bg-border"
-        />
+        <div className="h-full py-2 m-auto w-[1px] bg-border shrink-0" />
         {Object.entries(DATA.contact.social)
           .filter(([_, social]) => social.navbar)
           .map(([name, social], index) => {
@@ -64,10 +62,7 @@ export default function Navbar() {
               </Tooltip>
             );
           })}
-        <Separator
-          orientation="vertical"
-          className="h-full py-2 m-auto w-[1px] bg-border"
-        />
+        <div className="h-full py-2 m-auto w-[1px] bg-border shrink-0" />
         <Tooltip>
           <TooltipTrigger asChild>
             <DockIcon className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors rounded-md">

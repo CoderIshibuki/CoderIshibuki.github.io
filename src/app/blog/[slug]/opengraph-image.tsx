@@ -4,7 +4,13 @@ import { ImageResponse } from "next/og";
 import { allPosts } from "content-collections";
 import { DATA } from "@/data/resume";
 
-export const runtime = "edge";
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return allPosts.map((post) => ({
+    slug: post._meta.path.replace(/\.mdx$/, ""),
+  }));
+}
 
 export const alt = "Blog Post";
 export const size = {
@@ -121,6 +127,22 @@ const styles = {
     },
 } as const;
 
+import fs from "fs";
+import path from "path";
+
+const getImageData = () => {
+    try {
+        const imagePath = path.join(process.cwd(), "public", "me.png");
+        if (fs.existsSync(imagePath)) {
+            const buffer = fs.readFileSync(imagePath);
+            return `data:image/png;base64,${buffer.toString("base64")}`;
+        }
+    } catch {
+        return undefined;
+    }
+    return undefined;
+};
+
 export default async function Image({
     params,
 }: {
@@ -130,9 +152,7 @@ export default async function Image({
         const fontData = await getFontData();
         const { slug } = await params;
         const post = allPosts.find((p) => p._meta.path.replace(/\.mdx$/, "") === slug);
-        const imageUrl = DATA.avatarUrl
-            ? new URL(DATA.avatarUrl, DATA.url).toString()
-            : undefined;
+        const imageUrl = getImageData();
 
         if (!post) {
             return new ImageResponse(
@@ -142,7 +162,7 @@ export default async function Image({
                             <div style={styles.wrapper}>
                                 {imageUrl && (
                                     <div style={styles.imageSection}>
-                                        <img src={imageUrl} alt="Blog Post" style={styles.image} />
+                                        <img src={imageUrl} alt="Blog Post" width="140" height="140" style={styles.image} />
                                     </div>
                                 )}
                                 <div style={styles.mainContainer}>
@@ -186,7 +206,7 @@ export default async function Image({
                         <div style={styles.wrapper}>
                             {imageUrl && (
                                 <div style={styles.imageSection}>
-                                    <img src={imageUrl} alt={title} style={styles.image} />
+                                    <img src={imageUrl} alt={title} width="140" height="140" style={styles.image} />
                                 </div>
                             )}
                             <div style={styles.mainContainer}>
