@@ -16,7 +16,7 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
 
   if (!src || imageError) {
     return (
-      <div className="size-8 md:size-10 p-1 border rounded-md shadow ring-2 ring-border bg-muted flex-none" />
+      <div className="size-12 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
     );
   }
 
@@ -24,7 +24,7 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
     <img
       src={src}
       alt={alt}
-      className="size-8 md:size-10 p-1 border rounded-md shadow ring-2 ring-border overflow-hidden object-contain flex-none"
+      className="size-12 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none bg-background"
       onError={() => setImageError(true)}
     />
   );
@@ -76,7 +76,7 @@ export default function WorkSection() {
               </div>
             </div>
           </AccordionTrigger>
-          <AccordionContent className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground">
+          <AccordionContent className="p-0 ml-15 text-xs sm:text-sm text-muted-foreground">
             {work.description}
             {work.href && work.href !== "#" && work.href !== "" && (
               <div className="mt-4">
@@ -87,7 +87,7 @@ export default function WorkSection() {
                   href={work.href}
                 >
                   <Building2 className="mr-1 size-3" aria-hidden="true" />
-                  Visit Company Site
+                  Visit Site
                 </a>
               </div>
             )}

@@ -121,7 +121,7 @@ export const DATA = {
       badges: [],
       location: "Ho Chi Minh City",
       title: "Member",
-      logoUrl: "/hcmue-logo.png",
+      logoUrl: "/clb-tinhoc.png",
       start: "Ongoing",
       end: "Present",
       description: "Member of the HCMUE Informatics Club.",
