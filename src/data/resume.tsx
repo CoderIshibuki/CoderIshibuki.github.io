@@ -106,7 +106,7 @@ export const DATA = {
   work: [
     {
       company: "HCMUE Olympic Informatics Team",
-      href: "#",
+      href: "",
       badges: [],
       location: "Ho Chi Minh City",
       title: "Member — Open Source Software Category",
@@ -117,7 +117,7 @@ export const DATA = {
     },
     {
       company: "HCMUE Informatics Club",
-      href: "#",
+      href: "https://www.facebook.com/CLBTinHocHCMUE",
       badges: [],
       location: "Ho Chi Minh City",
       title: "Member",
