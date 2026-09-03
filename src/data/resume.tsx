@@ -144,7 +144,15 @@ export const DATA = {
       dates: "May 2026",
       active: true,
       description: "Developed an online exam system.",
-      technologies: ["FastAPI", "React", "PostgreSQL"],
+      technologies: [
+        "FastAPI",
+        "Python",
+        "PostgreSQL",
+        "React",
+        "TypeScript",
+        "Docker",
+        "Mako",
+      ],
       links: [
         {
           type: "Source",
