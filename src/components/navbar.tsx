@@ -18,18 +18,18 @@ export default function Navbar() {
           return (
             <Tooltip key={item.href}>
               <TooltipTrigger asChild>
-                <DockIcon>
+                <DockIcon className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors rounded-xl">
                   <a
                     href={item.href}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-colors hover:bg-accent hover:text-accent-foreground size-12"
+                    className="flex size-full items-center justify-center"
                   >
                     <item.icon className="size-4" />
                   </a>
                 </DockIcon>
               </TooltipTrigger>
-              <TooltipContent side="top" sideOffset={12}>
+              <TooltipContent side="top" sideOffset={12} className="bg-black text-white dark:bg-white dark:text-black rounded-lg px-3 py-1.5 text-sm font-medium">
                 <p>{item.label}</p>
               </TooltipContent>
             </Tooltip>
@@ -47,18 +47,18 @@ export default function Navbar() {
             return (
               <Tooltip key={`social-${name}-${index}`}>
                 <TooltipTrigger asChild>
-                  <DockIcon>
+                  <DockIcon className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors rounded-xl">
                     <a
                       href={social.url}
                       target={isExternal ? "_blank" : undefined}
                       rel={isExternal ? "noopener noreferrer" : undefined}
-                      className="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-colors hover:bg-accent hover:text-accent-foreground size-12"
+                      className="flex size-full items-center justify-center"
                     >
                       <IconComponent className="size-4" />
                     </a>
                   </DockIcon>
                 </TooltipTrigger>
-                <TooltipContent side="top" sideOffset={12}>
+                <TooltipContent side="top" sideOffset={12} className="bg-black text-white dark:bg-white dark:text-black rounded-lg px-3 py-1.5 text-sm font-medium">
                   <p>{name}</p>
                 </TooltipContent>
               </Tooltip>
@@ -70,13 +70,13 @@ export default function Navbar() {
         />
         <Tooltip>
           <TooltipTrigger asChild>
-            <DockIcon>
-              <div className="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-colors hover:bg-accent hover:text-accent-foreground size-12">
-                <ModeToggle className="size-4 cursor-pointer bg-transparent shadow-none border-none p-0 hover:bg-transparent" />
+            <DockIcon className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors rounded-xl">
+              <div className="flex size-full items-center justify-center">
+                <ModeToggle className="size-4 bg-transparent shadow-none border-none p-0 hover:bg-transparent" />
               </div>
             </DockIcon>
           </TooltipTrigger>
-          <TooltipContent side="top" sideOffset={12}>
+          <TooltipContent side="top" sideOffset={12} className="bg-black text-white dark:bg-white dark:text-black rounded-lg px-3 py-1.5 text-sm font-medium">
             <p>Theme</p>
           </TooltipContent>
         </Tooltip>

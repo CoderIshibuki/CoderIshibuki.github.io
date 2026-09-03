@@ -2,6 +2,7 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { IconCloud } from "@/components/ui/icon-cloud";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -118,6 +119,15 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
+          
+          <BlurFade delay={BLUR_FADE_DELAY * 9.5}>
+            <div className="flex justify-center items-center py-8">
+              <IconCloud 
+                images={DATA.skills.flatMap(group => group.items).map(skill => `https://skillicons.dev/icons?i=${skill.icon}&theme=dark`)}
+              />
+            </div>
+          </BlurFade>
+
           <div className="flex flex-col gap-y-6 mt-4">
             {DATA.skills.map((group, id) => (
               <BlurFade key={group.category} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
@@ -150,11 +160,7 @@ export default function Page() {
           <ProjectsSection />
         </BlurFade>
       </section>
-      <section id="hackathons">
-        <BlurFade delay={BLUR_FADE_DELAY * 13}>
-          <HackathonsSection />
-        </BlurFade>
-      </section>
+
       <section id="contact">
         <BlurFade delay={BLUR_FADE_DELAY * 16}>
           <ContactSection />
