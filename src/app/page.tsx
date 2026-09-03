@@ -10,7 +10,7 @@ import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
 import { ArrowUpRight } from "lucide-react";
-
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
@@ -124,15 +124,20 @@ export default function Page() {
                 <h3 className="text-lg font-semibold mb-2">{group.category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((skill) => (
-                    <img 
-                      key={skill.name} 
-                      src={`https://skillicons.dev/icons?i=${skill.icon}&theme=dark`} 
-                      alt={skill.name} 
-                      title={skill.name}
-                      width={48} 
-                      height={48} 
-                      className="object-contain" 
-                    />
+                    <Tooltip key={skill.name}>
+                      <TooltipTrigger>
+                        <img 
+                          src={`https://skillicons.dev/icons?i=${skill.icon}&theme=dark`} 
+                          alt={skill.name} 
+                          width={48} 
+                          height={48} 
+                          className="object-contain" 
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{skill.name}</p>
+                      </TooltipContent>
+                    </Tooltip>
                   ))}
                 </div>
               </BlurFade>
