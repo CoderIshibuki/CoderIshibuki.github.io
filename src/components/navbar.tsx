@@ -18,7 +18,7 @@ export default function Navbar() {
           return (
             <Tooltip key={item.href}>
               <TooltipTrigger asChild>
-                <DockIcon className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors rounded-xl">
+                <DockIcon className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors rounded-md">
                   <a
                     href={item.href}
                     target={isExternal ? "_blank" : undefined}
@@ -47,7 +47,7 @@ export default function Navbar() {
             return (
               <Tooltip key={`social-${name}-${index}`}>
                 <TooltipTrigger asChild>
-                  <DockIcon className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors rounded-xl">
+                  <DockIcon className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors rounded-md">
                     <a
                       href={social.url}
                       target={isExternal ? "_blank" : undefined}
@@ -70,7 +70,7 @@ export default function Navbar() {
         />
         <Tooltip>
           <TooltipTrigger asChild>
-            <DockIcon className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors rounded-xl">
+            <DockIcon className="cursor-pointer hover:bg-accent hover:text-accent-foreground transition-colors rounded-md">
               <div className="flex size-full items-center justify-center">
                 <ModeToggle className="size-4 bg-transparent shadow-none border-none p-0 hover:bg-transparent" />
               </div>
