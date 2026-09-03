@@ -58,11 +58,6 @@ export default function WorkSection() {
                 </div>
               </div>
             </Wrapper>
-            {work.description && (
-              <div className="ml-15 text-xs sm:text-sm text-muted-foreground">
-                {work.description}
-              </div>
-            )}
           </div>
         );
       })}
