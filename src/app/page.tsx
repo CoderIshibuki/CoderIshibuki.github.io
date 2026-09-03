@@ -12,6 +12,17 @@ import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
 import { ArrowUpRight } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { ReactLight } from "@/components/ui/svgs/reactLight";
+import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
+import { Typescript } from "@/components/ui/svgs/typescript";
+import { Nodejs } from "@/components/ui/svgs/nodejs";
+import { Python } from "@/components/ui/svgs/python";
+import { Golang } from "@/components/ui/svgs/golang";
+import { Postgresql } from "@/components/ui/svgs/postgresql";
+import { Docker } from "@/components/ui/svgs/docker";
+import { Kubernetes } from "@/components/ui/svgs/kubernetes";
+import { Java } from "@/components/ui/svgs/java";
+import { Csharp } from "@/components/ui/svgs/csharp";
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
@@ -25,12 +36,12 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
                 yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
+                text={`Hi, I'm ${DATA.name.split(" ").slice(-1)[0]} 👋`}
               />
               <BlurFadeText
                 className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
                 delay={BLUR_FADE_DELAY}
-                text={DATA.description}
+                text={`Full name is ${DATA.name}, I am a full-stack developer passionate about building scalable and impactful applications.`}
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
@@ -119,14 +130,6 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
-          
-          <BlurFade delay={BLUR_FADE_DELAY * 9.5}>
-            <div className="flex justify-center items-center py-8">
-              <IconCloud 
-                images={DATA.skills.flatMap(group => group.items).map(skill => `https://skillicons.dev/icons?i=${skill.icon}&theme=dark`)}
-              />
-            </div>
-          </BlurFade>
 
           <div className="flex flex-col gap-y-6 mt-4">
             {DATA.skills.map((group, id) => (
@@ -158,6 +161,28 @@ export default function Page() {
       <section id="projects">
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
           <ProjectsSection />
+        </BlurFade>
+      </section>
+
+      <section id="tech-cloud">
+        <BlurFade delay={BLUR_FADE_DELAY * 12}>
+          <div className="flex justify-center items-center py-8">
+            <IconCloud 
+              icons={[
+                <ReactLight key="react" />,
+                <NextjsIconDark key="nextjs" />,
+                <Typescript key="ts" />,
+                <Nodejs key="node" />,
+                <Python key="py" />,
+                <Golang key="go" />,
+                <Postgresql key="pg" />,
+                <Docker key="docker" />,
+                <Kubernetes key="k8s" />,
+                <Java key="java" />,
+                <Csharp key="cs" />
+              ]}
+            />
+          </div>
         </BlurFade>
       </section>
 

@@ -101,9 +101,12 @@ export function IconCloud({
         } else {
           // Handle SVG icons
           offCtx.scale(0.4, 0.4)
-          const svgString = renderToString(item as React.ReactElement)
+          let svgString = renderToString(item as React.ReactElement)
+          if (!svgString.includes('xmlns=')) {
+            svgString = svgString.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" ')
+          }
           const img = new Image()
-          img.src = "data:image/svg+xml;base64," + btoa(svgString)
+          img.src = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svgString)))
           img.onload = () => {
             offCtx.clearRect(0, 0, offscreen.width, offscreen.height)
             offCtx.drawImage(img, 0, 0)
