@@ -24,19 +24,44 @@ export const DATA = {
     "I am focused on solving complex problems and writing clean, maintainable code. My passion lies at the intersection of systems architecture, algorithmic optimization, and building meaningful technologies that scale.",
   avatarUrl: "/me.png",
   skills: [
-    "C++",
-    "Python",
-    "TypeScript",
-    "FastAPI",
-    "Uvicorn",
-    "Vite",
-    "PostgreSQL",
-    "MongoDB",
-    "Linux",
-    "Docker",
-    "Git",
-    "GitHub",
-    "Postman",
+    {
+      category: "Programming Languages",
+      items: [
+        { name: "C++", icon: "cpp" },
+        { name: "Python", icon: "py" },
+        { name: "TypeScript", icon: "ts" },
+      ]
+    },
+    {
+      category: "Frontend",
+      items: [
+        { name: "Vite", icon: "vite" },
+        { name: "React", icon: "react" },
+      ]
+    },
+    {
+      category: "Backend",
+      items: [
+        { name: "FastAPI", icon: "fastapi" },
+      ]
+    },
+    {
+      category: "Databases",
+      items: [
+        { name: "PostgreSQL", icon: "postgres" },
+        { name: "MongoDB", icon: "mongo" },
+      ]
+    },
+    {
+      category: "DevOps & Tools",
+      items: [
+        { name: "Linux", icon: "linux" },
+        { name: "Docker", icon: "docker" },
+        { name: "Git", icon: "git" },
+        { name: "GitHub", icon: "github" },
+        { name: "Postman", icon: "postman" },
+      ]
+    }
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
