@@ -140,23 +140,35 @@ export const DATA = {
   projects: [
     {
       title: "Online Exam System",
-      href: "#",
+      href: "https://github.com/CoderIshibuki/ExamTestWebsite",
       dates: "May 2026",
       active: true,
       description: "Developed an online exam system.",
       technologies: ["FastAPI", "React", "PostgreSQL"],
-      links: [],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/CoderIshibuki/ExamTestWebsite",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
       image: "",
       video: "",
     },
     {
       title: "TFT AI Assistant",
-      href: "#",
+      href: "https://github.com/CoderIshibuki/",
       dates: "March 2026",
       active: true,
       description: "Built an AI assistant for Teamfight Tactics.",
       technologies: ["Python", "AI"],
-      links: [],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/CoderIshibuki/",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
       image: "",
       video: "",
     }
