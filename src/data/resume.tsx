@@ -35,8 +35,9 @@ export const DATA = {
     {
       category: "Frontend",
       items: [
-        { name: "Vite", icon: "vite" },
         { name: "React", icon: "react" },
+        { name: "Vite", icon: "vite" },
+        { name: "Tailwind CSS", icon: "tailwind" },
       ]
     },
     {
