@@ -38,6 +38,8 @@ export const DATA = {
         { name: "React", icon: "react" },
         { name: "Vite", icon: "vite" },
         { name: "Tailwind CSS", icon: "tailwind" },
+        { name: "HTML5", icon: "html" },
+        { name: "CSS3", icon: "css" },
       ]
     },
     {
