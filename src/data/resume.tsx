@@ -57,6 +57,8 @@ export const DATA = {
       items: [
         { name: "Linux", icon: "linux" },
         { name: "Docker", icon: "docker" },
+        { name: "Kubernetes", icon: "kubernetes" },
+        { name: "Nginx", icon: "nginx" },
         { name: "Git", icon: "git" },
         { name: "GitHub", icon: "github" },
         { name: "Postman", icon: "postman" },
