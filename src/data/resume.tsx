@@ -15,7 +15,7 @@ import { Csharp } from "@/components/ui/svgs/csharp";
 export const DATA = {
   name: "Tran Vu Hoa Phat",
   initials: "TV",
-  url: "https://CoderIshibuki.github.io",
+  url: "https://phattvh.github.io",
   location: "Ho Chi Minh City, Vietnam",
   locationLink: "https://www.google.com/maps/place/Ho+Chi+Minh+City",
   description:
@@ -72,7 +72,7 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/CoderIshibuki",
+        url: "https://github.com/phattvh",
         icon: Icons.github,
         navbar: true,
       },
@@ -146,7 +146,7 @@ export const DATA = {
   projects: [
     {
       title: "Online Exam System",
-      href: "https://github.com/CoderIshibuki/ExamTestWebsite",
+      href: "https://github.com/phattvh/ExamTestWebsite",
       dates: "May 2026",
       active: true,
       description: "Developed an online exam system.",
@@ -162,7 +162,7 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://github.com/CoderIshibuki/ExamTestWebsite",
+          href: "https://github.com/phattvh/ExamTestWebsite",
           icon: <Icons.github className="size-3" />,
         },
       ],
@@ -171,7 +171,7 @@ export const DATA = {
     },
     {
       title: "TFT AI Assistant",
-      href: "https://github.com/CoderIshibuki/",
+      href: "https://github.com/phattvh/",
       dates: "March 2026",
       active: true,
       description: "Built an AI assistant for Teamfight Tactics.",
@@ -179,7 +179,7 @@ export const DATA = {
       links: [
         {
           type: "Source",
-          href: "https://github.com/CoderIshibuki/",
+          href: "https://github.com/phattvh/",
           icon: <Icons.github className="size-3" />,
         },
       ],
